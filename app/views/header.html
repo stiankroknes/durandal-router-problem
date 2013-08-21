@@ -1,0 +1,16 @@
+﻿<div data-role="header" data-position="fixed" id="homeHeader">
+    
+    <!-- ko if: $data.backVisible-->
+    <a data-bind="click: function() { router.navigateBack(); }">Back</a>
+    <!-- /ko -->
+    
+    <h1 data-bind="text: title"></h1>
+    
+    <a href="#" class="ui-btn-right">
+	<!--data-bind="attr: { href: router.navigationModel()[0].hash }"-->
+        <span>Home</span>
+    </a>  
+
+</div>
+
+

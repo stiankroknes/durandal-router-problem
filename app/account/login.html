@@ -1,0 +1,47 @@
+﻿<div>
+	
+	<!-- TODO cut and paste -->
+    
+	<div data-role="header" data-position="fixed" id="loginHeader">
+        <h1>Login</h1>
+    </div>
+	
+    <ul>
+        <li>
+            <label for="UserName">User name</label>
+            <input type="text" name="UserName" id="loginName" data-val-required="The User name field is required." data-val="true" autofocus="autofocus" data-bind="value: userName">
+            <span data-valmsg-replace="true" data-valmsg-for="UserName" class="field-validation-valid"></span>
+        </li>
+        <li>
+            <label for="Password">Password</label>
+            <input type="password" name="Password" id="Password" data-val-required="The Password field is required." data-val="true" data-bind="value: password">
+            <span data-valmsg-replace="true" data-valmsg-for="Password" class="field-validation-valid"></span>
+        </li>
+        <li>
+            <label for="ResourceId">Resource id</label>
+            <input type="text" name="ResourceId" id="ResourceId" data-val-required="The Resource id field is required." data-val-number="The field Resource id must be a number." data-val="true" data-bind="value: resourceId">
+            <span data-valmsg-replace="true" data-valmsg-for="EesourceId" class="field-validation-valid"></span>
+        </li>
+        <li>
+            <input type="checkbox" value="true" name="RememberMe" id="RememberMe" data-val-required="The Remember me? field is required." data-val="true"><input type="hidden" value="false" name="RememberMe" data-bind="value: rememberMe">
+            <label for="RememberMe" class="checkbox">Remember me?</label>
+        </li>
+        <li>
+            <button type="button" data-bind="click: login">Login</button>
+        </li>
+    </ul>
+	
+    <div data-valmsg-summary="true" class="validation-summary-valid">
+        <ul>
+            <li style="display: none"></li>
+        </ul>
+    </div>
+	
+    <span data-bind="text: $success"></span>
+    
+	<ul data-bind="foreach: $errors">
+        <li data-bind="text: $data"></li>
+    </ul>
+	
+    <p>TODO: Antiforgery</p>
+</div>

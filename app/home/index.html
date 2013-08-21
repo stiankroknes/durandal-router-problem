@@ -1,0 +1,18 @@
+﻿<ul data-role="listview" data-inset="true">
+
+    <li data-role="list-divider">
+		Navigation
+	</li>
+	
+    <li>
+        <a data-bind="click: logoff">Logout</a>
+    </li>
+
+    <!-- ko foreach: router.navigationModel -->
+    <li data-bind="css: { active: isActive }">
+        <a data-bind="attr: { href: hash }, html: title"></a>
+    </li>
+    <!-- /ko -->
+
+</ul>
+ 

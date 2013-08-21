@@ -1,0 +1,41 @@
+﻿<div>
+
+    <h2>From task-list </h2>
+
+    <div data-role="fieldcontain">
+        <label for="user">User: </label>
+        <!--<span data-bind="text: user"></span>-->
+    </div>
+
+    <button id="inviteButton" type="button">Invite test</button>
+
+    <a id="linkInvitePopup" href="#invitePopup" data-rel="popup" data-position-to="window" data-transition="pop" style="display: none;"></a>
+
+    <div data-role="popup" id="invitePopup" data-dismissible="false" style="max-width: 400px;" class="ui-corner-all">
+        <div data-role="header" data-theme="a" class="ui-corner-top">
+            <h1>Join mission?</h1>
+        </div>
+        <div data-role="content" data-theme="d" class="ui-corner-bottom ui-content">
+            <h3 class="ui-title">Invite to join mission XX from XX, accept?</h3>
+            <p id="inviteInfoContent"></p>
+            <a href="#" data-role="button" data-inline="true" data-rel="back" data-theme="c">Cancel</a>
+            <a href="#" data-role="button" data-inline="true" data-rel="back" data-transition="flow" data-theme="d">Accept</a>
+        </div>
+    </div>
+    <!--    <ul data-role="listview" data-filter="true" data-bind="foreach: tasks">-->
+    <ul data-role="listview" data-filter="true" data-bind="jqmListView: { data: tasks, divider: generateDivider, dividerCompareFunction: taskDividerSort, itemCompareFunction: sortTasks }, updateListviewOnChange: tasks">
+        <li>
+            <a data-bind="attr: { href: '#/tasks/' + Id }">
+                <h3 data-bind="text: Description"></h3>
+
+                <div data-bind="if: PlannedStart">
+                    <p>
+                        <strong>Planned start:</strong>: <b data-bind="text: PlannedStart"></b>
+                    </p>
+                </div>
+                <p class="ui-li-aside"><b>Where</b> <b data-bind="text: Kai"></b></p>
+            </a>
+        </li>
+    </ul>
+    <!--<pre data-bind="text: ko.toJSON($data, null, 2)"></pre>-->
+</div>
